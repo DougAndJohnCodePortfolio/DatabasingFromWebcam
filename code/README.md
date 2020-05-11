@@ -35,4 +35,4 @@ Coming soon!
 
    [face_recognition]: <https://github.com/ageitgey/face_recognition>
    [OpenCV]: <https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html>
-   [GitHub]
+   [GitHub]: <https://dougandjohncodeportfolio.github.io>
