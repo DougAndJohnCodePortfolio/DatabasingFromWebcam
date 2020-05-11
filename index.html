@@ -1,0 +1,1135 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Doug and Johns Portfolio Piece</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="#start">Start</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#tools">Tools Used</a></li>
+					<li><a href="#diagram">Diagram</a></li>
+					<li><a href="#initialization" class="init">Initialization</a></li>
+					<li><a href="#main" class="main">Main Function</a></li>
+					<li><a href="#OpenCV" class="OpenCV">OpenCV</a></li>
+					<li><a href="#facerec" class="facerec">face_recognition</a></li>
+					<li><a href="#numpy" class="numpy">numpy</a></li>
+					<li><a href="#contact" class="contact">Contact Us</a></li>
+					<li><a href="#footer">Page Footer</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Start -->
+		<section id="start" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<!-- <img class="image right" src="images/pic01smaller.jpg" alt="" data-position="center center" /> -->
+
+				<h1>Databasing Solutions to <br> Machine Learning Problems</h1>
+
+				<p>The first steps towards capturing better data from a live environment <br>
+					when using the machine learning tool face_recognition.<br>
+					An application portfolio piece by Doug and John.</p>
+
+				<!-- <code class="right" style="float: right; margin: 1em 4em 1em 1.5em;">
+					<div><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> row[</span><span
+							style="color: #2aa198;">'FrameCount'</span><span style="color: #bbbbbb;">] </span><span
+							style="color: #859900;">&gt;=</span><span style="color: #bbbbbb;"> frameCountTrigger:</span>
+					</div>
+				</code> -->
+				<ul class="actions">
+					<li><a href="#intro" class="button scrolly">Dive Deeper</a></li>
+				</ul>
+
+			</div>
+		</section>
+
+		<!-- Introduction -->
+		<section id="intro" class="wrapper style3 fullscreen fade-up">
+			<div class="inner">
+				<h2>Introduction</h2>
+				<p> <span class="image right"> <img src=" images/ParkingLotEdit.jpg" alt="" /> </span>
+					A machine learning algorithm is a tool that can improve automatically through experience.
+					It allows a programmer to explain something abstract to a computer - like the shape of a face or the
+					syllables in a word.
+					It's trained with examples and finds common patterns in the example data.
+					When shown new data the function determines if this data is similar enough to the example data to be
+					considered a match.
+					It's something we do intuitively - spotting a friend in a crowd or a car in a parking lot is really
+					easy for a person to do,
+					however a typical if/then/else computer program will struggle.
+					There's too much variance and background noise in real life situations for the data to ever be an
+					exact match.
+					The magic of a machine learning function is its ability to use example data to ignore most of the
+					background noise
+					and produce better results.</p>
+
+				<p>The face_recognition tool used in our application is a machine learning function that can detect and
+					ID
+					faces in a picture.
+					It is very good at what it does, but it is built on a key assumption:
+					The pictures supplied will always be good data.
+					In a live data environment, like a webcam feed, some of the frames are blurry and junk data.
+					When face_recognition finds a face in the webcam feed, it tries to ID it - even if the picture is
+					too blurry to be useful.
+					If every face ID was captured and databased, the database would be filled with bad data and blurry
+					face IDs.
+					Our solution is to process live, but save to the database on a slight frame delay.
+					By comparing this frame's face IDs to last frame's face IDs we can build a logic gate
+					and only commit an ID to the database if the face has been in the webcam feed for multiple
+					frames.
+				</p>
+				<ul class="actions">
+					<li><a href="#tools" class="button scrolly">Tools Used</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Tools Used -->
+		<section id="tools" class="wrapper style3 fade-up">
+			<div class="inner">
+				<h2>Tools Used</h2>
+
+				<div class="features">
+					<section>
+						<a href="https://www.python.org/" class="scrolly">
+							<span class="icon brands solid major fa-python"></span>
+							<h3>Python</h3>
+						</a>
+						<p>An extremely user-friendly programming language.</p>
+						<li>Code syntax is designed to be as intuitive and readable as possible</li>
+						<li>Code is interpreted, not compiled</li>
+						<li>Interpreters have been built for most operating systems - making collaboration easier</li>
+						<li>Thousands of third-party modules allow complex operations to be described with fewer lines
+							of code</li>
+					</section>
+					<section>
+						<a href="https://docs.opencv.org/master/index.html" class="scrolly">
+							<span class="icon solid major fa-video"></span>
+							<h3>OpenCV-python</h3>
+						</a>
+						<p>A library of computer vision functions with focus on real-time applications.</p>
+						<li>Captures video frames from webcam</li>
+						<li>Edits frames</li>
+						<li>Creates window to display frames</li>
+					</section>
+					<section>
+						<a href="https://face-recognition.readthedocs.io/en/latest/face_recognition.html"
+							class="scrolly">
+							<span class="icon solid major fa-filter"></span>
+							<h3>face_recognition</h3>
+						</a>
+						<p>"The world's simplest facial recognition api for Python and the command line" <br>
+							Built with dlib - a machine learning library for face and image recognition.</p>
+						<li>Detects faces in frame</li>
+						<li>IDs faces in frame</li>
+						<li>Compares face IDs</li>
+					</section>
+					<section>
+						<a href="https://numpy.org/devdocs/index.html" class="scrolly">
+							<span class="icon solid major fa-database"></span>
+							<h3>numpy</h3>
+						</a>
+						<p>A scientific computing and database library for Python. <br>
+							Strong emphasis on data structure and format with MATLAB-style metadata.</p>
+						<li>Loads arrays from .npy database files</li>
+						<li>Stores frames in RAM as array objects</li>
+						<li>Stores data in RAM as array objects</li>
+						<li>Saves arrays to .npy files</li>
+						<li>Saves float numbers as binary to maintain data accuracy</li>
+					</section>
+				</div>
+				<ul class="actions">
+					<li><a href="#diagram" class="button scrolly">App Diagram</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Diagram -->
+		<section id="diagram" class="wrapper style3 fullscreen fade-up">
+			<div class="inner">
+				<div class="mxgraph" style="max-width:100%;"
+					data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-05-09T20:54:10.791Z\&quot; agent=\&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36\&quot; etag=\&quot;ee2nBml6BA2VkS4qd2bn\&quot; version=\&quot;13.0.9\&quot; type=\&quot;google\&quot;&gt;&lt;diagram name=\&quot;DiagramExport3\&quot; id=\&quot;wj4pbCHUfzlOwMQibEdG\&quot;&gt;7Vxde+IoGP01PnulTwImJpd+TKe77XS743Q6vZoHI9XMJMFNsNX59QsJ+QSjrUa7dnpjIIDAec/h5QXbgkN/9TFEi/knMsVeC2jTVQuOWgC0gWED9smz1kmWZetJxix0p0lWIWPs/sIiUxO5S3eKo1JBSohH3UU50yFBgB1aykNhSJ7LxR6JV/7WBZphKWPsIE/OvXendJ7kAk3T8heX2J3N06820jc+SkuLjGiOpuS5kAU/tOAwJIQmT/5qiD0+fenEDIY37QeEv4K74dPN+P7a6sNpO2ns4iVVsjGEOKCHbVqg+4S8pZgwMVa6TmcwJMtginkjWgsOnucuxeMFcvjbZ2Y0LG9OfY+ldPb46HrekHgkjOtCYFqDEeD5JKDCOCBv5gmH1GUo9T13FrDMCaGU+OwFYU27lBubwcvNQjR12agLbT7Gf4V3IzdkluMS3k5AQo7aQAyLfQteVQxhyyTqGbKMFJj4mIZrVk+00s0M5zm3JtgTefOCIZm2yETCgmdZYzlI7EHg9ALMYLOYWYZta9o5YWbrMmbguJh1m8VsNISA9+98MDO7J8fMaFgb+33dts4Js0wHT4eZuR0zPGUOgkjyGSEzEiDvQ547KKOal7kmZCGw/IEpXQvQ0JKSCtI5ooA3EdGQ/Mz8D5hhwLvyCgTYcMgydETVYNi++2oT42rtXl77A0q+GX8JV0CjKJzh2vY2QBpiD1H3qdw7FVqi6i1xWb9zU7B6gj3rzOEqt5GMQFSrgJ714/V20Hspd1+BsoxqdSXt29pFv2wPJv+y7SZ4QPtQlrNk+9hsR4c3D5iquzCPtmGU20g61ph5WJJ5jNk30hob0bfre7Y/iMXZQ1Eknh3iu454LpiCbjUpxrre65Q5qCtcVx0q5LnblDqnftiu8swmgK13n2NjI8FBJfr15G2amnq6Td6q3XBPcu6HpS5hOUQLugwx36aHyE8+mePCDA5PHOSfE7ugpXdAZYlT7TK6GQlL/k9jBNthP/+bYHBXghknJZi8z78NiYOZ4WcEOx9CmRbobOeTbjXEJqXzo0sTfIS9A1659BuvzqYjST0U3oxWouU4sU4TARvut7QYTzzkLfBkXi1OrQvoXiDf9XjGJfaeMN94Kii5O5kbJ6+xK3l7JyWvHDzIV0cU158iingzAc/hI8L+goQo7iQKQ7Q+J3rbxknpre6y+X/h9x47zVQZtJcpQ+M07sk0Vmrwvj7uhg1odsqzTh26ipU1vAHV5QDFmJJYHYq68Ln/iU8SafEDMp/PPu/iDLlBxEcT4BVNnYE/oqzu+ciGVokTAFvhYx9VNMCLI/ln5TuDXZdfsO/yG1ftJ+tgVmDB+RjV8RqUDSZNX2ysoFcq6NsqaC+s0LVru8QeklEeVF+Awv/IBITO3UghG6bHAB1MwpIxm/8u+fl2bGjtKLa0PiugW4tV/pI9zfhnLFRMM85blEwDdtKNdrp8pBpU2vvDTk8hTb3GpOltHH7s4azss/V5Yw4OUDg4pg/gr8n3m/svf9Grq093P0Y/PzYVYc9c6VR1elqnW26l4SMYILs4TIJ8l+Y+TqwX/HmCIi5MJPD42N1HjgQOI8J9oDniIjLBmCVM5HNpCCYR/4gWhFJmqkDzl/xGkVcMPWb7qpApxxmpjwarcf2upXCKbIXyWI0pj+I8BT3hMrgx2EwKzipsZUOzGgc27IxpRUD040aCgS1B8vcCB8Ov0uxTvokoTTESFw8cNjWYibZ0I8F3p9NkscDMJUCTuCk+78I/Y+0ag5Yx4m2x9SESSLTkuw6NAdOt7Bzgqc++oHz29chs/HuIHTIL3PiOxvuAxjSMbdBkMBwHGvkoK1j6CzkAd5542PZ2quhHxQNIeNyumR/6Xgiig+oSf0xI6u4TFRD5k2sWm+1fSCldza/pGw8vLr6sF7zUrNH1BVYD2qrrFaYqNtUYSDJtJFje0+Hv5njyDnHnYx391nXy99WKVP5MlYvQmEOtxGSHuO+7J5ciOKwsZ56SXHJk9F1dq1Bx6bjXKnq1xHlDx67nea1iMyN3OdY56booB7h/X6o4HbmV4ew3dGdKqyV3mXvdOtoekHybjwCOcBdiL2DlzcUNUWJ9jSbYa25TvhElj3/vADk/Z7E9pSoakACXSQlqN+/ih8iiD63s179FtDdb/kaytrWO2YVCwPY83Kl4x3q3Y5abII+PEd73UOcqGjuX2o/7B+daWwHYd6a3d6mpnvJEsZaqapiPSt2aE5IjcFeJmhzffMDRqchbhOeVZN6LvJvtuo68tmaVSXcQJrelSF92cHNQLtfZbsEq7iIGMND+Wbpsri5kV2lO/Mky2u4mbYS17GyVvKmq11T0rhrzoLrVyzw99dmdItSqV3/RuANbWTL/dxEJjPm/3YAf/gM=&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}">
+				</div>
+			</div>
+		</section>
+
+		<!-- Initialization -->
+		<section id="initialization" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+
+				<p>This code is broken up for detailed explanations. <br>
+					The entire Python script is hosted on github <span style="color: #ff0000;">TODO </span>
+					here.</p>
+
+				<h2>Initialization</h2>
+
+
+				<p> Modules are imported. <br>
+					numpy array data structure is defined. <br>
+					Global variables are set. <br>
+					Database folders are created.</p>
+
+				<p> The <a href="#BuildArray" class="scrolly">BuildArray</a> function
+					initializes databaseArray by
+					loading a .npy file, if available (created the last time this code ran), <br>
+					and any .jpgs found in the same folder as the Python script. </p>
+
+				<code>
+					<div><span style="color: #859900;">import</span><span style="color: #bbbbbb;"> face_recognition</span></div>
+					<div><span style="color: #859900;">import</span><span style="color: #bbbbbb;"> cv2 </span><span style="color: #657b83; font-style: italic;"># required for webcam capture</span></div>
+					<div><span style="color: #859900;">import</span><span style="color: #bbbbbb;"> os </span><span style="color: #657b83; font-style: italic;"># listdir lists files found in folder</span></div>
+					<div><span style="color: #859900;">import</span><span style="color: #bbbbbb;"> numpy </span><span style="color: #859900;">as</span><span style="color: #bbbbbb;"> np </span><span style="color: #657b83; font-style: italic;"># array library</span></div>
+					<div><span style="color: #859900;">from</span><span style="color: #bbbbbb;"> datetime </span><span style="color: #859900;">import</span><span style="color: #bbbbbb;"> datetime, timedelta </span><span style="color: #657b83; font-style: italic;"># code execution timing</span></div>
+					<div><span style="color: #859900;">from</span><span style="color: #bbbbbb;"> shutil </span><span style="color: #859900;">import</span><span style="color: #bbbbbb;"> copy2, move </span><span style="color: #657b83; font-style: italic;"># file moving</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Setup timing</span></div>
+					<div><span style="color: #bbbbbb;">startTime </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> datetime.now()</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Define the 'column' names and data type of the database and live arrays</span></div>
+					<div><span style="color: #bbbbbb;">liveDataStructure </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.dtype(</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> [(</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'uint32'</span><span style="color: #bbbbbb;">), (</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'U15'</span><span style="color: #bbbbbb;">), (</span><span style="color: #2aa198;">'FrameCount'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'uint32'</span><span style="color: #bbbbbb;">), (</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'uint32'</span><span style="color: #bbbbbb;">, (</span><span style="color: #d33682;">4</span><span style="color: #bbbbbb;">)), (</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'float64'</span><span style="color: #bbbbbb;">, (</span><span style="color: #d33682;">128</span><span style="color: #bbbbbb;">))])</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #bbbbbb;">databaseStructure </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.dtype(</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> [(</span><span style="color: #2aa198;">'Key'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'uint32'</span><span style="color: #bbbbbb;">), (</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'U15'</span><span style="color: #bbbbbb;">), (</span><span style="color: #2aa198;">'FrameSaved'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'U18'</span><span style="color: #bbbbbb;">), (</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'float64'</span><span style="color: #bbbbbb;">, (</span><span style="color: #d33682;">128</span><span style="color: #bbbbbb;">))])</span></div>
+					<p><br /><br /></p>
+					<div><span style="color: #657b83; font-style: italic;"># Initialize global variables</span></div>
+					<div><span style="color: #bbbbbb;">lastFrameArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.array([], liveDataStructure)</span></div>
+					<div><span style="color: #bbbbbb;">processThisFrame </span><span style="color: #859900;">=</span> <span style="color: #b58900;">True</span></div>
+					<div><span style="color: #bbbbbb;">userClickedOnUnknown </span><span style="color: #859900;">=</span> <span style="color: #b58900;">False</span></div>
+					<div><span style="color: #bbbbbb;">mouseClick </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> [</span><span style="color: #859900;">-</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">, </span><span style="color: #859900;">-</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">]</span></div>
+					<div><span style="color: #bbbbbb;">screenShotInterval </span><span style="color: #859900;">=</span> <span style="color: #d33682;">60</span> <span style="color: #657b83; font-style: italic;"># Measured in seconds</span></div>
+					<div><span style="color: #bbbbbb;">frameCountTrigger </span><span style="color: #859900;">=</span> <span style="color: #d33682;">2</span> <span style="color: #657b83; font-style: italic;"># How soon after a faces appears</span></div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># does AppendDatabase and TakeScreenshots logic fire?</span></div>
+					<div><span style="color: #bbbbbb;">databaseRecheckTrigger </span><span style="color: #859900;">=</span> <span style="color: #d33682;">5</span> <span style="color: #657b83; font-style: italic;"># How many frames can ProcessFrame use lastFrameArray's</span></div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># data before a database recheck?</span></div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Prevents liveArray from latching onto a bad ID (for too long)</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Check for and create file folders</span></div>
+					<div><span style="color: #859900;">if</span> <span style="color: #859900;">not</span><span style="color: #bbbbbb;"> os.path.exists(</span><span style="color: #2aa198;">'./Data/'</span><span style="color: #bbbbbb;">):</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> os.makedirs(</span><span style="color: #2aa198;">'./Data/'</span><span style="color: #bbbbbb;">)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> os.makedirs(</span><span style="color: #2aa198;">'./Data/Database/'</span><span style="color: #bbbbbb;">)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> os.makedirs(</span><span style="color: #2aa198;">'./Data/UploadedOriginals/'</span><span style="color: #bbbbbb;">)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> os.makedirs(</span><span style="color: #2aa198;">'./Data/Screenshots/'</span><span style="color: #bbbbbb;">)</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Terminal output</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">OpenCV and Facial Recognition Test App Mk3</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'This program looks for pictures of people in ./'</span><span style="color: #bbbbbb;">)</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">"The name of the file is assumed to be the pictured person's name."</span><span style="color: #bbbbbb;">)</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'This program can also be updated with new faces once they appear in the webcam.'</span><span style="color: #bbbbbb;">)</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Load .npy file and any new .jpg's to RAM</span></div>
+					<div><span style="color: #bbbbbb;">databaseArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> BuildArray(databaseStructure)</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Get a reference to the default webcam</span></div>
+					<div><span style="color: #bbbbbb;">videoCapture </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> cv2.VideoCapture(</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">)</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">Setup time: '</span> <span style="color: #859900;">+</span> <span style="color: #859900;">str</span><span style="color: #bbbbbb;">(datetime.now() </span><span style="color: #859900;">-</span><span style="color: #bbbbbb;"> startTime))</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Open new Qt window.</span></div>
+					<div><span style="color: #657b83; font-style: italic;"># This is normally done with .imshow('Video', frame)</span></div>
+					<div><span style="color: #657b83; font-style: italic;"># but for .setMouseCallback to work it needs a named window.</span></div>
+					<div><span style="color: #bbbbbb;">cv2.namedWindow(</span><span style="color: #2aa198;">'Video'</span><span style="color: #bbbbbb;">)</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># Listen for mouse events, if any happen push to ClickedInWindow</span></div>
+					<div><span style="color: #bbbbbb;">cv2.setMouseCallback(</span><span style="color: #2aa198;">'Video'</span><span style="color: #bbbbbb;">, ClickedInWindow)</span></div>
+					<p>&nbsp;</p>
+					<div><span style="color: #657b83; font-style: italic;"># More terminal output</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n\n</span><span style="color: #2aa198;">...</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">Launching OpenCV window.'</span><span style="color: #bbbbbb;">)</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">Program instructions:'</span><span style="color: #bbbbbb;">)</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">' 1. Click on an Unknown face to tag that person.</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<div><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">' 2. Press q to quit!</span><span style="color: #cb4b16;">\n\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<p>&nbsp;</p>
+				</code>
+
+				<h2 id="BuildArray">BuildArray</h2>
+				<p>Builds databaseArray <br>
+					Checks for pre-built testDatabase2.npy <br>
+					Checks for new .jpgs in ./ <br>
+					workingArray becomes databaseArray <br>
+				</p>
+
+				<p> Inputs:
+					<li>databaseStructure (numpy column names and expected data types - used to keep databaseArray
+						organized)</li>
+				</p>
+
+				<p> Process: if the database exists, load it <br>
+					&emsp; if there are pictures in ./ <br>
+					&emsp; &emsp; for each picture in ./ <br>
+					&emsp; &emsp; &emsp; encode, check for similar encodings in database, add new row to database, <br>
+					&emsp; &emsp; &emsp; move picture to /Data/UploadedOriginals/ (gets .jpg out of the way for next
+					program launch)
+					<br>
+
+				</p>
+
+				<p>
+					Returns: workingArray (a fixed dimm numpy array - becomes databaseArray)
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">BuildArray</span><span style="color: #bbbbbb;">(databaseStructure):</span></div>
+					<div>&nbsp;</div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Get the time and date, format it into something database friendly (fixed char count)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> currentTimeAndDate </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> datetime.now().strftime(</span><span style="color: #2aa198;">"%H:%M:%S-</span><span style="color: #cb4b16;">%d%b</span><span style="color: #2aa198;">%Y"</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># If database exists, load it</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> os.path.exists(</span><span style="color: #2aa198;">'./Data/Database/testDatabase2.npy'</span><span style="color: #bbbbbb;">):</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> workingArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.load(</span><span style="color: #2aa198;">'./Data/Database/testDatabase2.npy'</span><span style="color: #bbbbbb;">)</span></div>
+					<div style="padding-left: 60px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">Database load successful!</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Otherwise initialize an empty workingArray, but be specific on data structure</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">else</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> workingArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.array([], databaseStructure)</span></div>
+					<div style="padding-left: 60px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">Could not find database, building...</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Load only the .jpg file names in ./ to the knownFaceFiles list</span></div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># File name is assumed to be the name of the person pictured!</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> knownFaceFiles </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> [f </span><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> f </span><span style="color: #859900;">in</span><span style="color: #bbbbbb;"> os.listdir(</span></div>
+					<div style="padding-left: 30px;"><span style="color: #2aa198;">'./'</span><span style="color: #bbbbbb;">) </span><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> f.endswith(</span><span style="color: #2aa198;">'.jpg'</span><span style="color: #bbbbbb;">)]</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> knownFaceFiles.sort()</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">Encoding pictures found in ./</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Build workingArray from .jpg's found in ./</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> currentFile </span><span style="color: #859900;">in</span><span style="color: #bbbbbb;"> knownFaceFiles:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Load current image file into a numpy array</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> currentImageArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> face_recognition.load_image_file(</span></div>
+					<div style="padding-left: 60px;"><span style="color: #2aa198;">'./'</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> currentFile)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Pass the current image numpy array to .face_encodings</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> encodedFacesList </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> face_recognition.face_encodings(currentImageArray)</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Returns a list of (128)-dimensional face encodings (one per face found)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Does supplied image contain a (recognizable) face? How many?</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If there are no faces found</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span> <span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(encodedFacesList) </span><span style="color: #859900;">==</span> <span style="color: #d33682;">0</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 90px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">{0</span><span style="color: #93a1a1; font-weight: bold;">:&lt;22</span><span style="color: #cb4b16;">}{1}</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">.format(currentFile, </span><span style="color: #2aa198;">'No encodable faces found.'</span><span style="color: #bbbbbb;">))</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If there is one face found</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span> <span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(encodedFacesList) </span><span style="color: #859900;">==</span> <span style="color: #d33682;">1</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># This is the only case where naming a face is possible</span></div>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Remember - the identification is driven by the picture's file name!</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Compare the current face encoding against the database</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> facesFound </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> face_recognition.compare_faces(</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> encodedFacesList[</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">], workingArray[</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">])</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># If the encoded face isn't already in the database</span></div>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Aka: if none of the bools in the facesFound list are True</span></div>
+					<div style="padding-left: 90px;"><span style="color: #859900;">if</span> <span style="color: #859900;">not</span> <span style="color: #268bd2;">any</span><span style="color: #bbbbbb;">(facesFound):</span></div>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># The encoded face is the primary key</span></div>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># When processing the live feed, the .compare_faces list should NEVER contain 2 True values</span></div>
+					<p style="padding-left: 120px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># Build new row of data</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> newRowOfData </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.array(</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> [((</span><span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(workingArray) </span><span style="color: #859900;">+</span> <span style="color: #d33682;">1</span><span style="color: #bbbbbb;">), currentFile.replace(</span><span style="color: #2aa198;">'.jpg'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">''</span><span style="color: #bbbbbb;">), currentTimeAndDate, encodedFacesList[</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">])], databaseStructure)</span></div>
+					<p style="padding-left: 120px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># Add the new row to the end of workingArray</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> workingArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.append(workingArray, newRowOfData, axis</span><span style="color: #859900;">=</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 120px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">{0</span><span style="color: #93a1a1; font-weight: bold;">:&lt;22</span><span style="color: #cb4b16;">}{1}</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">.format(currentFile,</span></div>
+					<div style="padding-left: 120px;"><span style="color: #2aa198;">'Encoding Success! Moving file to /Data/UploadedOriginals/'</span><span style="color: #bbbbbb;">))</span></div>
+					<p style="padding-left: 120px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #859900;">try</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 150px;"><span style="color: #657b83; font-style: italic;"># Move current .jpg to /Data/UploadedOriginals</span></div>
+					<div style="padding-left: 150px;"><span style="color: #bbbbbb;"> move(</span><span style="color: #2aa198;">'./'</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> currentFile,</span></div>
+					<div style="padding-left: 150px;"><span style="color: #2aa198;">'./Data/UploadedOriginals/'</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> currentFile)</span></div>
+					<p style="padding-left: 150px;">&nbsp;</p>
+					<div style="padding-left: 150px;"><span style="color: #657b83; font-style: italic;"># Make a folder named from the .jpg file name</span></div>
+					<div style="padding-left: 150px;"><span style="color: #bbbbbb;"> os.makedirs(</span><span style="color: #2aa198;">'./Data/Screenshots/'</span> <span style="color: #859900;">+</span></div>
+					<div style="padding-left: 150px;"><span style="color: #bbbbbb;"> currentFile.replace(</span><span style="color: #2aa198;">'.jpg'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'/'</span><span style="color: #bbbbbb;">))</span></div>
+					<p style="padding-left: 150px;">&nbsp;</p>
+					<div style="padding-left: 150px;"><span style="color: #657b83; font-style: italic;"># Handle any and all of the weird reasons a move or mkdr command might fail</span></div>
+					<div style="padding-left: 120px;"><span style="color: #859900;">except</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 150px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'ERROR: Unable to move '</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> currentFile)</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># If the initial .compare_faces came back with a True value</span></div>
+					<div style="padding-left: 90px;"><span style="color: #859900;">else</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># This could get weird in the wild.</span></div>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># At the very least we should print the ID results</span></div>
+					<div style="padding-left: 120px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">{0</span><span style="color: #93a1a1; font-weight: bold;">:&lt;22</span><span style="color: #cb4b16;">}{1}</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">.format(currentFile, </span><span style="color: #2aa198;">'Already in database as '</span> <span style="color: #859900;">+</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> workingArray[facesFound.index(</span><span style="color: #b58900;">True</span><span style="color: #bbbbbb;">)][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">]))</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If too many faces were found</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span> <span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(encodedFacesList) </span><span style="color: #859900;">&gt;</span> <span style="color: #d33682;">1</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># </span><span style="color: #859900; font-style: italic;">TODO</span><span style="color: #657b83; font-style: italic;">: 'Would you like to tag the people in this picture (Y/N)?'</span></div>
+					<div style="padding-left: 90px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">{0</span><span style="color: #93a1a1; font-weight: bold;">:&lt;22</span><span style="color: #cb4b16;">}{1}</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">.format(</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> currentFile, </span><span style="color: #2aa198;">'Too many people in picture. People found: '</span> <span style="color: #859900;">+</span> <span style="color: #859900;">str</span><span style="color: #bbbbbb;">(</span><span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(encodedFacesList))))</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Return all the data sources compiled into one uniform list for live processing (and saving)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">return</span><span style="color: #bbbbbb;"> workingArray</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+				</code>
+
+			</div>
+
+		</section>
+
+
+		<!-- Main Function -->
+		<section id="main" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+
+				<h2>Main Function</h2>
+				<p>This while loop represents the core functionality of the program. <br>
+					This loop repeats forever, as quickly as the hardware allows, until the user quits the program. </p>
+				<p> In the Python script this block of code is found at the bottom - after the custom functions
+					are defined.</p>
+
+				<code>
+					<div><span style="color: #859900;">while</span> <span style="color: #b58900;">True</span><span
+							style="color: #bbbbbb;">:</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Read a frame of video</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> ret, frame </span><span
+							style="color: #859900;">=</span><span style="color: #bbbbbb;"> videoCapture.read()</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Process the faces in the frame and
+							return an array row for each face found in frame</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> liveArray </span><span
+							style="color: #859900;">=</span><span style="color: #bbbbbb;"> ProcessFrame(</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> frame, lastFrameArray, databaseArray, liveDataStructure,
+							databaseRecheckTrigger)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># For each row in liveArray that
+							leaves ProcessFrame without a successful ID, create a new database row</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> databaseArray </span><span
+							style="color: #859900;">=</span><a href="#AppendDatabase" class="scrolly" style="color: #bbbbbb;"> AppendDatabase(</a></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> liveArray, databaseArray, databaseStructure,
+							frameCountTrigger)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Add .jpgs to image database on
+							timed intervals, per face</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> TakeScreenshots(</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;">frame, liveArray, databaseArray, screenShotInterval,
+							frameCountTrigger)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Use the x/y cords and name of the
+							found face to display the results on frame (building GUI)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> PaintBoxes(frame, liveArray)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Paint FPS data on frame</span>
+					</div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> difference </span><span
+							style="color: #859900;">=</span><span style="color: #bbbbbb;"> (datetime.now() </span><span
+							style="color: #859900;">-</span><span style="color: #bbbbbb;"> newTime)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> fps </span><span style="color: #859900;">=</span> <span
+							style="color: #2aa198;">'FPS: </span><span style="color: #cb4b16;">{</span><span
+							style="color: #93a1a1; font-weight: bold;">:0.2f</span><span style="color: #cb4b16;">}</span><span
+							style="color: #2aa198;">'</span><span style="color: #bbbbbb;">.format(</span><span
+							style="color: #d33682;">1</span> <span style="color: #859900;">/</span><span style="color: #bbbbbb;">
+							difference.microseconds </span><span style="color: #859900;">*</span> <span
+							style="color: #d33682;">1000000</span><span style="color: #bbbbbb;">)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> font </span><span style="color: #859900;">=</span><span
+							style="color: #bbbbbb;"> cv2.</span><span style="color: #cb4b16;">FONT_HERSHEY_SIMPLEX</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> cv2.putText(frame, fps, (</span><span
+							style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span
+							style="color: #d33682;">30</span><span style="color: #bbbbbb;">), font, </span><span
+							style="color: #d33682;">1</span><span style="color: #bbbbbb;">, (</span><span
+							style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span
+							style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span
+							style="color: #d33682;">255</span><span style="color: #bbbbbb;">), </span><span
+							style="color: #d33682;">2</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Store data in RAM to compare
+							against next frame's data<br /></span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> lastFrameArray </span><span
+							style="color: #859900;">=</span><span style="color: #bbbbbb;"> liveArray</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># processThisFrame = not
+							processThisFrame</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Display the resulting image</span>
+					</div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> cv2.imshow(</span><span
+							style="color: #2aa198;">'Video'</span><span style="color: #bbbbbb;">, frame)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Listen for user click, if click
+							happens in an UnkwownX box, return which box was clicked on and a True flag</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> liveArrayRow, userClickedOnUnknown </span><span
+							style="color: #859900;">=</span><span style="color: #bbbbbb;"> ClickID(mouseClick, liveArray)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># If ClickID returned True</span>
+					</div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;">
+							userClickedOnUnknown </span><span style="color: #859900;">==</span> <span
+							style="color: #b58900;">True</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># This line pauses the while loop
+							until user inputs text</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> newNameInput </span><span
+							style="color: #859900;">=</span> <span style="color: #268bd2;">input</span><span
+							style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'Tag this person: '</span><span
+							style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Updates record in liveArray,
+							databaseArray, and record's /Screenshot/ folder</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> PromoteUnknown(newNameInput, liveArrayRow, liveArray,
+							databaseArray)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Reset user click to impossible
+							coordinates</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> mouseClick </span><span
+							style="color: #859900;">=</span><span style="color: #bbbbbb;"> [</span><span
+							style="color: #859900;">-</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">,
+						</span><span style="color: #859900;">-</span><span style="color: #d33682;">1</span><span
+							style="color: #bbbbbb;">]</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Reset while loop to run
+							indefinitely</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> userClickedOnUnknown </span><span
+							style="color: #859900;">=</span> <span style="color: #b58900;">False</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Hit 'q' on the keyboard to
+							quit!</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;">
+							cv2.waitKey(</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">) </span><span
+							style="color: #859900;">&amp;</span> <span style="color: #93a1a1; font-weight: bold;">0x</span><span
+							style="color: #d33682;">FF</span> <span style="color: #859900;">==</span> <span
+							style="color: #268bd2;">ord</span><span style="color: #bbbbbb;">(</span><span
+							style="color: #2aa198;">'q'</span><span style="color: #bbbbbb;">):</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">break</span></div>
+					<p><span style="color: #bbbbbb;">&nbsp;</span></p>
+
+					<div><span style="color: #657b83; font-style: italic;"># Release handle to the webcam</span></div>
+					<div><span style="color: #bbbbbb;">videoCapture.release()</span></div>
+					<div><span style="color: #bbbbbb;">cv2.destroyAllWindows()</span></div>
+					<br />
+					<div><span style="color: #657b83; font-style: italic;"># Print and save the databaseArray in its final state before
+							program exit</span></div>
+					<div><span style="color: #bbbbbb;">SaveArray(databaseArray)</span></div>
+				</code>
+			</div>
+
+		</section>
+
+		<!-- OpenCV -->
+		<section id="OpenCV" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h2 id="PaintBoxes">PaintBoxes</h2>
+				<p> Paints names and boxes on inputFrame <br>
+					Uses liveArray ['FaceLocation'] x/y cords to paint boxes on a frame <br>
+					Uses liveArray ['Name'] to paint an ID'd name below box <br>
+				</p>
+
+				<p> Inputs:
+					<li>inputFrame (numpy array representing pixels)</li>
+					<li>liveArray (x/y coordinates and name data)</li>
+				</p>
+
+				<p> Process: draw box at ['FaceLocation'], draw ['Name'] below it
+				</p>
+
+				<p>
+					Returns: void
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">PaintBoxes</span><span style="color: #bbbbbb;">(inputFrame, liveArray):</span></div>
+					<div>
+					<p>&nbsp;</p>
+					</div>
+					<div><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> row </span><span style="color: #859900;">in</span><span style="color: #bbbbbb;"> liveArray:</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Scale back up face locations - processing was scaled to 1/2 size</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> top </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> right </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> bottom </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">2</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> left </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">3</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Draw a box around the face</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> cv2.rectangle(inputFrame, (left, top), (right, bottom), (</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">255</span><span style="color: #bbbbbb;">), </span><span style="color: #d33682;">2</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Draw a label with a name below the face</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> cv2.rectangle(inputFrame, (left, bottom </span><span style="color: #859900;">-</span> <span style="color: #d33682;">35</span><span style="color: #bbbbbb;">),</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> (right, bottom), (</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">255</span><span style="color: #bbbbbb;">), cv2.</span><span style="color: #cb4b16;">FILLED</span><span style="color: #bbbbbb;">)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> font </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> cv2.</span><span style="color: #cb4b16;">FONT_HERSHEY_DUPLEX</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> cv2.putText(inputFrame, row[</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">], (left </span><span style="color: #859900;">+</span> <span style="color: #d33682;">6</span><span style="color: #bbbbbb;">, bottom </span><span style="color: #859900;">-</span> <span style="color: #d33682;">6</span><span style="color: #bbbbbb;">),</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> font, </span><span style="color: #d33682;">1.0</span><span style="color: #bbbbbb;">, (</span><span style="color: #d33682;">255</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">255</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">255</span><span style="color: #bbbbbb;">), </span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">)</span></div>
+				</code>
+
+				<h2 id="TakeScreenshots">TakeScreenshots</h2>
+				<p> Checks databaseArray's 'FrameSaved' at liveArray's 'ForeignKey' <br>
+					'FrameSaved' is converted to datetime object <br>
+					If 'FrameSaved' is older than now by more than 1 minute <br>
+					&emsp; and face has been in frame for at least frameCountTrigger frames: <br>
+					Save timestamped .jpg to /Data/Screenshots/ liveArray's 'Name' / <br>
+				</p>
+
+				<p> Inputs:
+					<li>inputFrame (numpy array representing pixels)</li>
+					<li>liveArray (name and 'last seen' data)</li>
+					<li>databaseArray (contains data on when last screenshot was taken)</li>
+					<li>frameCountTrigger (how soon after a faces appears does TakeScreenshots logic fire?)</li>
+				</p>
+
+				<p> Process: for each row in liveArray <br>
+					&emsp; check databaseArray's 'FrameSaved' at liveArrayrow's 'ForeignKey' <br>
+					&emsp; take screenshot if last screenshot is too old <br>
+					&emsp; update databaseArray with new 'FrameSaved' data <br>
+				</p>
+
+				<p>
+					Returns: void
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">TakeScreenshots</span><span style="color: #bbbbbb;">(inputFrame, liveArray, databaseArray, screenShotInterval, frameCountTrigger):</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Get the time and date, format it into something database friendly (fixed char count)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> currentTimeAndDate </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> datetime.now().strftime(</span><span style="color: #2aa198;">"%H:%M:%S-</span><span style="color: #cb4b16;">%d%b</span><span style="color: #2aa198;">%Y"</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">SaveJPG</span><span style="color: #bbbbbb;">(inputName):</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> filePath </span><span style="color: #859900;">=</span> <span style="color: #2aa198;">'./Data/Screenshots/'</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> inputName </span><span style="color: #859900;">+</span> <span style="color: #2aa198;">'/'</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">try</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If the named folder doesn't exist in /Screenshots</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span> <span style="color: #859900;">not</span><span style="color: #bbbbbb;"> os.path.exists(filePath):</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Make named folder</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> os.makedirs(filePath)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Save date and time stamped .jpg</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> cv2.imwrite(filePath </span><span style="color: #859900;">+</span><span style="color: #bbbbbb;"> currentTimeAndDate </span><span style="color: #859900;">+</span></div>
+					<div style="padding-left: 60px;"><span style="color: #2aa198;">'.jpg'</span><span style="color: #bbbbbb;">, inputFrame)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Update databaseArray's 'FrameSaved' to process against next time face appears in frame</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> databaseArray[databaseRow][</span><span style="color: #2aa198;">'FrameSaved'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> currentTimeAndDate</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'Screenshot of '</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> inputName </span><span style="color: #859900;">+</span></div>
+					<div style="padding-left: 60px;"><span style="color: #2aa198;">' saved and FrameSaved timestamp updated.'</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Handle any and all of the weird reasons a mkdr or save .jpg command might fail</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">except</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 60px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'ERROR: Unable to save screenshot for '</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> inputName)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> row </span><span style="color: #859900;">in</span><span style="color: #bbbbbb;"> liveArray:</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If face has been in frame for at least frameCountTrigger frames</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FrameCount'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">&gt;=</span><span style="color: #bbbbbb;"> frameCountTrigger:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># liveArray contains a reference (forign key) to the databaseArray</span></div>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># The '-1': the key for the first row is 1, but the INDEX of the first row is 0</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> databaseRow </span><span style="color: #859900;">=</span> <span style="color: #859900;">int</span><span style="color: #bbbbbb;">(row[</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">]</span><span style="color: #859900;">-</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># If a screenshot has never been saved, take Screenshot (new database record)</span></div>
+					<div style="padding-left: 90px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> databaseArray[databaseRow][</span><span style="color: #2aa198;">'FrameSaved'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">==</span> <span style="color: #2aa198;">''</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> SaveJPG(databaseArray[databaseRow][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">])</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># If a screenshot has been saved before, get the date it was save from databaseArray's 'FrameSaved'</span></div>
+					<div style="padding-left: 90px;"><span style="color: #859900;">else</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> lastSave </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> datetime.strptime(</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> databaseArray[databaseRow][</span><span style="color: #2aa198;">'FrameSaved'</span><span style="color: #bbbbbb;">], </span><span style="color: #2aa198;">"%H:%M:%S-</span><span style="color: #cb4b16;">%d%b</span><span style="color: #2aa198;">%Y"</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 120px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># If the most recent screenshot is older than X minutes</span></div>
+					<div style="padding-left: 120px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> datetime.now() </span><span style="color: #859900;">&gt;=</span><span style="color: #bbbbbb;"> lastSave </span><span style="color: #859900;">+</span><span style="color: #bbbbbb;"> timedelta(seconds</span><span style="color: #859900;">=</span><span style="color: #bbbbbb;">screenShotInterval):</span></div>
+					<p style="padding-left: 120px;">&nbsp;</p>
+					<div style="padding-left: 150px;"><span style="color: #bbbbbb;"> SaveJPG(databaseArray[databaseRow][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">])</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+				</code>
+
+				<h2 id="ClickID">ClickID</h2>
+				<p> Processes user clicks </p>
+
+				<p> Inputs:
+					<li>mouseClick (x/y coordinates of user click)</li>
+					<li>liveArray (ForignKey points back to databaseArray and x/y coordinates of faces found)</li>
+				</p>
+
+				<p> Process: for each row in liveArray <br>
+					&emsp; if a click landed in a box labeled 'Unknown' <br>
+					&emsp; &emsp; Return which row in liveArray was clicked, <br>
+					&emsp; &emsp; &emsp; and True for a 'user input that triggers response' signal <br>
+					&emsp; &emsp; if the click landed anywhere else <br>
+					&emsp; &emsp; &emsp; Return 0, False <br>
+				</p>
+
+				<p>
+					Returns: which box in liveArray was clicked, and if it happened within the face locations box
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">ClickID</span><span style="color: #bbbbbb;">(mouseClick, liveArray):</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> rowIndex, row </span><span style="color: #859900;">in</span> <span style="color: #268bd2;">enumerate</span><span style="color: #bbbbbb;">(liveArray):</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># print(row['FaceLocation'])</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># returns [ 76 225 166 135]</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># top, right, bottom, left</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># print(row['Name'][0:7])</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># returns Unknown</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> xCord </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> mouseClick[</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">]</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> yCord </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> mouseClick[</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">]</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> top </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> right </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> bottom </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">2</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> left </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FaceLocation'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">3</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">*</span> <span style="color: #d33682;">2</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># print(row['Name'][0:7])</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If the mouseclick landed within one of the found faces in liveArray</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> xCord </span><span style="color: #859900;">&gt;</span><span style="color: #bbbbbb;"> left </span><span style="color: #859900;">and</span><span style="color: #bbbbbb;"> xCord </span><span style="color: #859900;">&lt;</span><span style="color: #bbbbbb;"> right </span><span style="color: #859900;">and</span><span style="color: #bbbbbb;"> yCord </span><span style="color: #859900;">&gt;</span><span style="color: #bbbbbb;"> top </span><span style="color: #859900;">and</span><span style="color: #bbbbbb;"> yCord </span><span style="color: #859900;">&lt;</span><span style="color: #bbbbbb;"> bottom:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># And the mouse click landed in a non-ID'd box</span></div>
+					<div style="padding-left: 90px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">][</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">:</span><span style="color: #d33682;">7</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">==</span> <span style="color: #2aa198;">'Unknown'</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #859900;">return</span><span style="color: #bbbbbb;"> rowIndex, </span><span style="color: #b58900;">True</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">return</span> <span style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span style="color: #b58900;">False</span></div>
+				</code>
+
+				<h2 id="ClickedInWindow">ClickedInWindow</h2>
+				<p> This function catches everything cv2.setMouseCallback spits out. <br>
+					&emsp; Of all the data .setMouseCallback returns, <br>
+					&emsp; &emsp; this ClickedInWindow function is only interested in one event: a left mouse click <br>
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">ClickedInWindow</span><span style="color: #bbbbbb;">(event, x, y, flags, param):</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Reference a variable from outside this function (public), don't create a new variable (private)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #93a1a1; font-weight: bold;">global</span><span style="color: #bbbbbb;"> mouseClick</span></div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># global variables are usually bad, but might be necessary</span></div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># because of how this tool is used to capture cv2.setMouseCallback data</span></div>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># (no opportunity to set an external variable)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> event </span><span style="color: #859900;">==</span><span style="color: #bbbbbb;"> cv2.</span><span style="color: #cb4b16;">EVENT_LBUTTONDOWN</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If a left mouse button click is detected, set the global mouseClick</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># to the current click's x/y coordinates.</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> mouseClick </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> [x, y]</span></div>
+					<p>&nbsp;</p>
+				</code>
+
+
+			</div>
+
+		</section>
+
+		<!-- face_recognition -->
+		<section id="facerec" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h2 id="ProcessFrame">ProcessFrame</h2>
+				<p> Builds workingArray from inputFrame <br>
+					ID's faces in workingArray using multiple sources (lastFrameArray, databaseArray), <br>
+					&emsp; organized by processor cost
+				</p>
+
+				<p> Assign a name to a face encoding found in frame <br>
+					Any faces that can't be ID'd by the last frame's data or the database <br>
+					&emsp; remain in workingArray as initialized: 'ForeignKey' = 0, 'Name' = 'Unknown'</p>
+
+				<p> Inputs:
+					<li>inputFrame (the cv2 webcam capture)</li>
+					<li>lastFrameArray (a copy of last frame's liveArray aka - the work ProcessFrame did last frame)
+					</li>
+					<li>databaseArray (a fixed dimm numpy array)</li>
+					<li>liveDataStructure (numpy column names and expected data types - used to keep liveArray
+						organized)</li>
+				</p>
+
+				<p> Process: <br>
+					for each face found in inputFrame <br>
+					&emsp; build a new workingArray row <br>
+					&emsp; &emsp; set 'ForeignKey' = 0, 'Name' = 'Unknown', capture face location, and face encoding
+					data <br>
+					for each in workingArray <br>
+					&emsp; check lastFrameArray for matching faces <br>
+					&emsp; &emsp; set 'ForeignKey' and 'Name' if a match comes back True <br>
+					&emsp; if lastFrameArray cannot ID the face (or if data is older than databaseRecheckTrigger) <br>
+					&emsp; &emsp; check databaseArray for matching faces <br>
+					&emsp; &emsp; &emsp; set 'ForeignKey' and 'Name' if a match comes back True <br>
+					&emsp; &emsp; &emsp; (some rows might remain 'ForeignKey' = 0, 'Name' = 'Unknown')
+				</p>
+				<p>
+					Returns: workingArray (a fixed dimm numpy array - becomes liveArray)
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">ProcessFrame</span><span style="color: #bbbbbb;">(inputFrame, lastFrameArray, databaseArray, liveDataStructure, databaseRecheckTrigger):</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">CheckLastFrame</span><span style="color: #bbbbbb;">(row, inputEncoding):</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Checks inputEncoding against lastFrameArray's 'FaceEncoding' data</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># if a match is found and last frame data is less than databaseRecheckTrigger frames old</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># set workingArray[row] data to lastFrameArray's matched index</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># return True</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> lastFrameMatches </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> face_recognition.compare_faces(</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> lastFrameArray[</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">], inputEncoding)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If this frame contains the same face as last frame</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span> <span style="color: #b58900;">True</span> <span style="color: #859900;">in</span><span style="color: #bbbbbb;"> lastFrameMatches:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Get the index of the true value</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> indexOfTrue </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> lastFrameMatches.index(</span><span style="color: #b58900;">True</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># If 'FrameCount' data in lastFrameArray is greater than databaseRecheckTrigger</span></div>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Aka if this row in lastFrameArray has been used to ID the current frame</span></div>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># too many times, force a database check</span></div>
+					<div style="padding-left: 90px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> lastFrameArray[indexOfTrue][</span><span style="color: #2aa198;">'FrameCount'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">&gt;=</span><span style="color: #bbbbbb;"> databaseRecheckTrigger:</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># Forces CheckDatabase function to fire</span></div>
+					<div style="padding-left: 120px;"><span style="color: #859900;">return</span> <span style="color: #b58900;">False</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Get the name from the hard work we did last frame</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> workingArray[row][</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> lastFrameArray[indexOfTrue][</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">]</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> workingArray[row][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> lastFrameArray[indexOfTrue][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">]</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Iterate 'FrameCount' if this face is ID'd from last frame's data</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> workingArray[row][</span><span style="color: #2aa198;">'FrameCount'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> lastFrameArray[indexOfTrue][</span><span style="color: #2aa198;">'FrameCount'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">+</span> <span style="color: #d33682;">1</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># print(workingArray[row]['FrameCount'])</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #859900;">return</span> <span style="color: #b58900;">True</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">CheckDatabase</span><span style="color: #bbbbbb;">(row, inputEncoding):</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Checks inputEncoding against databaseArray's 'FaceEncoding' data</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If a match can't be found here, ProcessFrame will return this row of workingArray</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># as 'ForeignKey' = 0, 'Name' = 'Unknown' (unedited after initialization)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># if a match is found</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># set workingArray[row] data to databaseArray's matched index</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> databaseMatches </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> face_recognition.compare_faces(</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> databaseArray[</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">], currentFaceEncoding)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If a match was found, add it to the thisFrameNames list</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span> <span style="color: #b58900;">True</span> <span style="color: #859900;">in</span><span style="color: #bbbbbb;"> databaseMatches:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> indexOfTrue </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> databaseMatches.index(</span><span style="color: #b58900;">True</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> workingArray[row][</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> databaseArray[indexOfTrue][</span><span style="color: #2aa198;">'Key'</span><span style="color: #bbbbbb;">]</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> workingArray[row][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> databaseArray[indexOfTrue][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">]</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> workingArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.array([], liveDataStructure)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Resize frame to 1/2 size for faster face recognition processing</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> smallFrame </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> cv2.resize(inputFrame, (</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">), fx</span><span style="color: #859900;">=</span><span style="color: #d33682;">0.5</span><span style="color: #bbbbbb;">, fy</span><span style="color: #859900;">=</span><span style="color: #d33682;">0.5</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> rgbSmallFrame </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> smallFrame[:, :, ::</span><span style="color: #859900;">-</span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">]</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Check rgbSmallFrame for faces (high cost function!)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> faceLocations </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> face_recognition.face_locations(</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> rgbSmallFrame)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># If faces are found</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">if</span> <span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(faceLocations) </span><span style="color: #859900;">&gt;</span> <span style="color: #d33682;">0</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Get face encodings at each faceLocations' x/y cord</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> faceEncodings </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> face_recognition.face_encodings(</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> rgbSmallFrame, faceLocations)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Combine faceLocations, faceEncodings for easier iterating</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> faceData </span><span style="color: #859900;">=</span> <span style="color: #268bd2;">zip</span><span style="color: #bbbbbb;">(faceLocations, faceEncodings)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># For each faceLocation, faceEncoding in faceData</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> faceLoc, faceEnc </span><span style="color: #859900;">in</span><span style="color: #bbbbbb;"> faceData:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Create a new workingArray row using the liveDataStructure column names and data types</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> newLiveRow </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.array(</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> [(</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'Unknown'</span><span style="color: #bbbbbb;">, </span><span style="color: #d33682;">1</span><span style="color: #bbbbbb;">, faceLoc, faceEnc)], liveDataStructure)</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Append newLiveRow to workingArray and reinitialize workingArray (slightly taller now)</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> workingArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.append(workingArray, newLiveRow, axis</span><span style="color: #859900;">=</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># For each item in workingArray's 'FaceEncoding' column</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> currentRow, currentFaceEncoding </span><span style="color: #859900;">in</span> <span style="color: #268bd2;">enumerate</span><span style="color: #bbbbbb;">(workingArray[</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">]):</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If there was a face last frame, check the last frame data first</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span> <span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(lastFrameArray) </span><span style="color: #859900;">&gt;</span> <span style="color: #d33682;">0</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Check last frame, returns True if it finds a match</span></div>
+					<div style="padding-left: 90px;"><span style="color: #859900;">if</span> <span style="color: #859900;">not</span><span style="color: #bbbbbb;"> CheckLastFrame(currentRow, currentFaceEncoding):</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># Check databaseArray for matches</span></div>
+					<div style="padding-left: 120px;"><span style="color: #bbbbbb;"> CheckDatabase(currentRow, currentFaceEncoding)</span></div>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># Iterating across a large database is expensive!</span></div>
+					<div style="padding-left: 120px;"><span style="color: #657b83; font-style: italic;"># This code only fires when CheckLastFrame returns false</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If there was NO face last frame</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">else</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Check databaseArray for matches</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> CheckDatabase(currentRow, currentFaceEncoding)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Return processing results</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">return</span><span style="color: #bbbbbb;"> workingArray</span></div>
+				</code>
+			</div>
+
+		</section>
+
+		<!-- numpy -->
+		<section id="numpy" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+
+				<h2 id="AppendDatabase">AppendDatabase</h2>
+				<p>Checks ProcessFrame's work. <br>
+					A face that couldn't be ID by ProcessFrame it comes in as 'ForeignKey' = 0 in liveArray</p>
+
+				<p> If the face couldn't be ID'd and has been in frame for at least frameCountTrigger frames:<br>
+					AppendDatabase creates a new database record for the new face and assigns<br>
+					&emsp; 'Key' = database length + 1,<br>
+					&emsp; 'Name' = 'unknown' + 'Key'<br>
+					&emsp; 'FaceEncoding' = liveArray current row's 'FaceEncoding'<br>
+					current row in liveArray is updated with the new database row's 'Key' and 'Name' values<br>
+					workingArray is returned as a taller databaseArray</p>
+
+				<p> Inputs:
+					<li> liveArray (may contain 'ForeignKey' = 0, 'Name' = '' rows),</li>
+					<li>databaseArray (a fixed dimm numpy array),</li>
+					<li>databaseStructure (numpy column names and expected data types - used to keep databaseArray
+						organized)</li>
+					<li>frameCountTrigger (how soon after a faces appears does AppendDatabase logic fire?)</li>
+				</p>
+
+				<p> Process: for each row in liveArray where 'ForeignKey' = 0 and 'FrameCount' >= frameCountTrigger
+					build a new row for databaseArray
+					edit liveArray in-line using data from newDatabaseRow
+					append newDatabaseRow to a workingArray for each new face
+				</p>
+
+				<p>
+					Returns: workingArray (a fixed dimm numpy array slightly taller than databaseArray)
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">AppendDatabase</span><span style="color: #bbbbbb;">(liveArray, databaseArray, databaseStructure, frameCountTrigger):</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> workingArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> databaseArray</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># print(workingArray)</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> row </span><span style="color: #859900;">in</span><span style="color: #bbbbbb;"> liveArray:</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># If ProcessFrame was unable to ID the face in row['FaceEncoding']</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># and face has been in frame for at least frameCountTrigger frames</span></div>
+					<div style="padding-left: 60px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">==</span> <span style="color: #d33682;">0</span> <span style="color: #859900;">and</span><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'FrameCount'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">&gt;=</span><span style="color: #bbbbbb;"> frameCountTrigger:</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Build new row of data in the same shape as databaseArray</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> newDatabaseRow </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.array([((</span><span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(workingArray) </span><span style="color: #859900;">+</span> <span style="color: #d33682;">1</span><span style="color: #bbbbbb;">), (</span><span style="color: #2aa198;">'Unknown'</span> <span style="color: #859900;">+</span> <span style="color: #859900;">str</span><span style="color: #bbbbbb;">(</span></div>
+					<div style="padding-left: 90px;"><span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(workingArray) </span><span style="color: #859900;">+</span> <span style="color: #d33682;">1</span><span style="color: #bbbbbb;">)), </span><span style="color: #2aa198;">''</span><span style="color: #bbbbbb;">, row[</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">])], databaseStructure)</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Update liveArray's row['ForeignKey'] with the ['Key'] in databaseArray that contains the data for this person</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> newDatabaseRow[</span><span style="color: #2aa198;">'Key'</span><span style="color: #bbbbbb;">]</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Update liveArray's row['Name'] with the unknownX assigned by newDatabaseRow's 'Unknown' + len(databaseArray)+1</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> row[</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> newDatabaseRow[</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">]</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Append newDatabaseRow to the end of workingArray and reinitialize workingArray (slightly taller now)</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> workingArray </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> np.append(workingArray, newDatabaseRow, axis</span><span style="color: #859900;">=</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">)</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #657b83; font-style: italic;"># Announce a new row as been added</span></div>
+					<div style="padding-left: 90px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(newDatabaseRow[</span><span style="color: #d33682;">0</span><span style="color: #bbbbbb;">][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">+</span> <span style="color: #2aa198;">' appended to database'</span><span style="color: #bbbbbb;">)</span></div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">return</span><span style="color: #bbbbbb;"> workingArray</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+				</code>
+
+				<h2 id="PromoteUnknown">PromoteUnknown</h2>
+				<p>Handles folder renaming <br>
+					Updates liveArray <br>
+					Updates databaseArray <br>
+				</p>
+
+				<p> Inputs:
+					<li> newNameInput (user's text input)</li>
+					<li>liveArrayRow (which box in liveArray the user clicked on - found by ClickID)</li>
+					<li>liveArray (for retrieving databaseArray's key and editing liveArray name data)</li>
+					<li>databaseArray (editing databaseArray name data)</li>
+				</p>
+
+				<p> Process: if user input is not blank <br>
+					&emsp; use liveArray's 'ForeignKey' to point to a row in databaseArray <br>
+					<br>
+					&emsp; use the 'Name in databaseArray to set the current file path <br>
+					&emsp; use the user's text input to set the new file path <br>
+					&emsp; rename file path <br>
+					<br>
+					&emsp; update 'Name in liveArray with user's text input <br>
+					&emsp; update 'Name in databaseArray with user's text input <br>
+				</p>
+
+				<p>
+					Returns: void
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">PromoteUnknown</span><span style="color: #bbbbbb;">(newNameInput, liveArrayRow, liveArray, databaseArray):</span></div>
+					<div>&nbsp;</div>
+					<p>&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">if</span><span style="color: #bbbbbb;"> newNameInput </span><span style="color: #859900;">!=</span> <span style="color: #2aa198;">''</span> <span style="color: #859900;">and</span><span style="color: #bbbbbb;"> newNameInput.isalpha():</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> databaseRow </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> liveArray[liveArrayRow][</span><span style="color: #2aa198;">'ForeignKey'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">-</span> <span style="color: #d33682;">1</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> currentName </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> databaseArray[databaseRow][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">]</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> currentFilePath </span><span style="color: #859900;">=</span> <span style="color: #2aa198;">'./Data/Screenshots/'</span> <span style="color: #859900;">+</span> <span style="color: #d30102;">\</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> databaseArray[databaseRow][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">]</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> newFilePath </span><span style="color: #859900;">=</span> <span style="color: #2aa198;">'./Data/Screenshots/'</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> newNameInput</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #859900;">try</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> os.rename(currentFilePath, newFilePath)</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> liveArray[liveArrayRow][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> newNameInput</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #bbbbbb;"> databaseArray[databaseRow][</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">] </span><span style="color: #859900;">=</span><span style="color: #bbbbbb;"> newNameInput</span></div>
+					<p style="padding-left: 90px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(currentName </span><span style="color: #859900;">+</span></div>
+					<div style="padding-left: 90px;"><span style="color: #2aa198;">' updated in database and /Data/Screenshots/ to '</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> newNameInput)</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 60px;"><span style="color: #859900;">except</span><span style="color: #bbbbbb;">:</span></div>
+					<p style="padding-left: 60px;">&nbsp;</p>
+					<div style="padding-left: 90px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'Unable to update record '</span> <span style="color: #859900;">+</span><span style="color: #bbbbbb;"> currentName)</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #859900;">else</span><span style="color: #bbbbbb;">:</span></div>
+					<div style="padding-left: 30px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'Unacceptable characters used - unable to update record'</span><span style="color: #bbbbbb;">)</span>&nbsp;</div>
+				</code>
+
+				<h2 id="SaveArray">SaveArray</h2>
+				<p>Saves databaseArray <br>
+					Prints a report of what's being saved <br>
+				</p>
+
+				<p> Inputs:
+					<li> databaseArray (a fixed dimm numpy array)</li>
+				</p>
+
+				<p> Process: for each row in databaseArray <br>
+					&emsp; print 'Key', 'Name', 'FrameSaved', type('FaceEncoding') <br>
+					save databaseArray as testDatabase2.npy
+				</p>
+
+				<p>
+					Returns: void
+				</p>
+
+				<code>
+					<div><span style="color: #93a1a1; font-weight: bold;">def</span> <span style="color: #268bd2;">SaveArray</span><span style="color: #bbbbbb;">(databaseArray):</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Prove there's data in the array before saving</span></div>
+					<div style="padding-left: 30px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n\n</span><span style="color: #2aa198;">Database contents just before saving:</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">{0</span><span style="color: #93a1a1; font-weight: bold;">:3</span><span style="color: #cb4b16;">}</span> <span style="color: #cb4b16;">{1</span><span style="color: #93a1a1; font-weight: bold;">:&lt;18</span><span style="color: #cb4b16;">}</span> <span style="color: #cb4b16;">{2</span><span style="color: #93a1a1; font-weight: bold;">:&lt;22</span><span style="color: #cb4b16;">}</span> <span style="color: #cb4b16;">{3}\n</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">.format(</span></div>
+					<div style="padding-left: 30px;"><span style="color: #2aa198;">'Key'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">'FrameSaved'</span><span style="color: #bbbbbb;">, </span><span style="color: #2aa198;">"type('FaceEncoding')"</span><span style="color: #bbbbbb;">))</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Print each row of data in databaseArray</span></div>
+					<div style="padding-left: 30px;"><span style="color: #859900;">for</span><span style="color: #bbbbbb;"> currentRow </span><span style="color: #859900;">in</span><span style="color: #bbbbbb;"> databaseArray:</span></div>
+					<div style="padding-left: 60px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">{0</span><span style="color: #93a1a1; font-weight: bold;">:3</span><span style="color: #cb4b16;">}</span> <span style="color: #cb4b16;">{1</span><span style="color: #93a1a1; font-weight: bold;">:&lt;18</span><span style="color: #cb4b16;">}</span> <span style="color: #cb4b16;">{2</span><span style="color: #93a1a1; font-weight: bold;">:&lt;22</span><span style="color: #cb4b16;">}</span> <span style="color: #cb4b16;">{3}</span><span style="color: #2aa198;">'</span><span style="color: #bbbbbb;">.format(</span></div>
+					<div style="padding-left: 60px;"><span style="color: #bbbbbb;"> currentRow[</span><span style="color: #2aa198;">'Key'</span><span style="color: #bbbbbb;">], currentRow[</span><span style="color: #2aa198;">'Name'</span><span style="color: #bbbbbb;">], currentRow[</span><span style="color: #2aa198;">'FrameSaved'</span><span style="color: #bbbbbb;">], </span><span style="color: #859900;">str</span><span style="color: #bbbbbb;">(</span><span style="color: #859900;">type</span><span style="color: #bbbbbb;">(currentRow[</span><span style="color: #2aa198;">'FaceEncoding'</span><span style="color: #bbbbbb;">]))))</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Take the one non-string item 'FaceEncoding' and represent it as an object type</span></div>
+					<div style="padding-left: 60px;"><span style="color: #657b83; font-style: italic;"># Aka: it's there - I promise!</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Minimalist sanity check</span></div>
+					<div style="padding-left: 30px;"><span style="color: #268bd2;">print</span><span style="color: #bbbbbb;">(</span><span style="color: #2aa198;">'</span><span style="color: #cb4b16;">\n</span><span style="color: #2aa198;">Array length: '</span> <span style="color: #859900;">+</span> <span style="color: #859900;">str</span><span style="color: #bbbbbb;">(</span><span style="color: #268bd2;">len</span><span style="color: #bbbbbb;">(databaseArray)))</span></div>
+					<p style="padding-left: 30px;">&nbsp;</p>
+					<div style="padding-left: 30px;"><span style="color: #657b83; font-style: italic;"># Save array as a binary file (maintains float values)</span></div>
+					<div style="padding-left: 30px;"><span style="color: #bbbbbb;"> np.save(</span><span style="color: #2aa198;">'./Data/Database/testDatabase2.npy'</span><span style="color: #bbbbbb;">, databaseArray)</span></div>
+				</code>
+			</div>
+
+		</section>
+
+		<!-- Contact Us -->
+		<section id="contact" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+
+				<div class="split style1">
+
+					<section>
+						<iframe class="airtable-embed airtable-dynamic-height"
+							src="https://airtable.com/embed/shruwjWzL4lKeOjdC?backgroundColor=blue" frameborder="0"
+							onmousewheel="" width="100%" height="778" style="background: transparent;"></iframe>
+					</section>
+
+					<section>
+						<h2>About Us</h2>
+						<p> Doug is a freelance programmer with a background in Networking, Systems Admin, and
+							Databasing. <br>
+							Based out of New Hampshire, USA
+						</p>
+						<p> John is a robotics teacher and freelance programmer with a background in robotics, VR, and
+							<a
+								href="https://education.agu.org/grants/data-visualization-storytelling-competition/award-information/john-granholm-appalachian-state-university/">geology</a>.
+							<br>
+							Based out of North Carolina, USA
+						</p>
+					</section>
+				</div>
+			</div>
+		</section>
+
+
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Doug and John. All rights reserved.</li>
+				<li>Web hosting by <a href="https://github.com/">Github</a></li>
+				<li>Design: a modified version of <a href="https://html5up.net/">HTML5 UP</a>'s
+					<a href="https://html5up.net/hyperspace">hyperspace</a> template.</li>
+				<li>Photos are from <a
+						href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>:
+					<a
+						href="https://unsplash.com/@umby?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Stormtrooper</a>,
+					<a
+						href="https://unsplash.com/@ryansearle?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Parking
+						lot</a></li>
+				<li>Diagram built with <a href="https://app.diagrams.net/">diagrams.net</a></li>
+				<li>Contact Us webform built with <a href="https://airtable.com/">Airtable</a></li>
+				<li>Color theme: <a href="https://ethanschoonover.com/solarized/">Solarized Dark</a></li>
+
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/viewer.min.js"></script>
+	<script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
+
+</body>
+
+</html>
