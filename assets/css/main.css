@@ -3979,9 +3979,9 @@ input, select, textarea {
 			padding: 8em 4em 2em 4em;
 		}
 
-		#start .inner h1, p {
+		/* #start .inner h1, p {
 			width: 70%;
-		}
+		} */
 	
 
 	@media screen and (max-width: 1280px) {
