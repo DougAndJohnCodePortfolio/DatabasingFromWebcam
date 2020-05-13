@@ -2578,13 +2578,13 @@ input, select, textarea {
 				}
 
 					.wrapper.style3 .icon.fa-video:before {
-						color: #2AA198;
+						color: #859900;
 					}
 					.wrapper.style3 .icon.fa-filter:before {
 						color: #DC322F;
 					}
 					.wrapper.style3 .icon.fa-database:before {
-						color: #859900;
+						color: #2AA198;
 					}
 
 				.wrapper.style3-alt .icon.major:before {
@@ -3794,7 +3794,7 @@ input, select, textarea {
 					color: #B58900;
 				}
 				#sidebar nav > ul > li > a.OpenCV {
-					color: #2AA198;
+					color: #859900;
 					text-transform: none;
 				}
 				#sidebar nav > ul > li > a.facerec {
@@ -3802,7 +3802,7 @@ input, select, textarea {
 					text-transform: none;
 				}
 				#sidebar nav > ul > li > a.numpy {
-					color: #859900;
+					color: #2AA198;
 					text-transform: none;
 				}
 
