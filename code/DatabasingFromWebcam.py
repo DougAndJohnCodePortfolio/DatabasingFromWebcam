@@ -1,9 +1,12 @@
 # OpenCV and Facial Recognition Test App Mk3              16APR2020
+# Copyright Doug Hardy and John Granholm
 
-# Saves and imports database file
-# Uploads user-supplied pictures
-# ID's faces found in webcamfeed as unique records in database
-# Responds to user click to elevate an Unknown record to a named record
+# Creates a folder called Data next to where the Python script is run
+# Starts the default webcam
+# Uses previous webcam frame to determine if current frame is reliable data
+# Captures cleaner data from webcam
+# Saves data in machine-friendly bits and human-friendly .jpg files
+
 
 import face_recognition
 import cv2  # required for webcam capture
@@ -631,9 +634,6 @@ while True:
     # Read a frame of video
     ret, frame = videoCapture.read()
 
-    # Only process every other frame of video to save time
-    # if processThisFrame:
-
     # Process the faces in the frame and return an array row for each face found in frame
     liveArray = ProcessFrame(
         frame, lastFrameArray, databaseArray, liveDataStructure, databaseRecheckTrigger)
@@ -657,8 +657,6 @@ while True:
 
     # Save ProcessFrame's work from this frame to help it ID against a smaller list next frame
     lastFrameArray = liveArray
-
-    # processThisFrame = not processThisFrame
 
     # Display the resulting image
     cv2.imshow('Video', frame)
